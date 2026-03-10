@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { useCart } from '../context/CartContext';
 import { useLanguage } from '../context/LanguageContext';
 
 const Checkout = () => {
-  const navigate = useNavigate();
   const { cartItems, clearCart } = useCart();
   const { t } = useLanguage();
 
@@ -28,24 +27,25 @@ const Checkout = () => {
     e.preventDefault();
     
     // Construct WhatsApp message
-    const itemsList = cartItems.map(item => `• ${item.name} (x${item.qty}) - ${item.price * item.qty} MAD`).join('%0A');
+    const itemsList = cartItems.map(item => `• ${item.name} (x${item.qty}) - ${item.price * item.qty} MAD`).join('\n');
     
-    const message = `*New Order - BALOBALI*%0A%0A` +
-      `*Contact Details:*%0A` +
-      `- Name: ${formData.firstName} ${formData.lastName}%0A` +
-      `- Email: ${formData.email}%0A` +
-      `- Phone: ${formData.phone}%0A` +
-      `- Address: ${formData.address}, ${formData.city} (${formData.postalCode})%0A%0A` +
-      `*Ordered Items:*%0A` +
+    const messageText = `*New Order - BALOBALI*\n\n` +
+      `*Contact Details:*\n` +
+      `- Name: ${formData.firstName} ${formData.lastName}\n` +
+      `- Email: ${formData.email}\n` +
+      `- Phone: ${formData.phone}\n` +
+      `- Address: ${formData.address}, ${formData.city} (${formData.postalCode})\n\n` +
+      `*Ordered Items:*\n` +
       itemsList +
-      `%0A%0A*Total Amount: ${subtotal} MAD*%0A%0A` +
+      `\n\n*Total Amount: ${subtotal} MAD*\n\n` +
       `_Payment Method: Cash on Delivery_`;
 
-    const whatsappUrl = `https://wa.me/212600000000?text=${message}`;
+    const encodedMessage = encodeURIComponent(messageText);
+    const whatsappNumber = "212600000000"; // Replace with your actual Moroccan WhatsApp number
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
     
-    window.open(whatsappUrl, '_blank');
+    window.location.href = whatsappUrl;
     clearCart();
-    navigate('/');
   };
 
   return (
