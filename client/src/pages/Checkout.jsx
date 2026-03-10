@@ -41,7 +41,7 @@ const Checkout = () => {
       `_Payment Method: Cash on Delivery_`;
 
     const encodedMessage = encodeURIComponent(messageText);
-    const whatsappNumber = "212600000000"; // Replace with your actual Moroccan WhatsApp number
+    const whatsappNumber = "212642853333"; // Updated with your actual Moroccan WhatsApp number
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
     
     window.location.href = whatsappUrl;
