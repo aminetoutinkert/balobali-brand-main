@@ -9,7 +9,9 @@ export const translations = {
       admin: 'Admin',
       login: 'Connexion',
       register: 'S\'inscrire',
-      logout: 'Déconnexion'
+      logout: 'Déconnexion',
+      home: 'Accueil',
+      cart: 'Panier'
     },
     home: {
       hero: {
@@ -117,7 +119,9 @@ export const translations = {
       admin: 'مسؤول',
       login: 'تسجيل الدخول',
       register: 'تسجيل',
-      logout: 'تسجيل الخروج'
+      logout: 'تسجيل الخروج',
+      home: 'الرئيسية',
+      cart: 'السلة'
     },
     home: {
       hero: {
@@ -225,7 +229,9 @@ export const translations = {
       admin: 'Admin',
       login: 'Login',
       register: 'Register',
-      logout: 'Logout'
+      logout: 'Logout',
+      home: 'Home',
+      cart: 'Cart'
     },
     home: {
       hero: {
