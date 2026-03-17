@@ -6,7 +6,7 @@ const Footer = () => {
   const { t } = useLanguage();
 
   return (
-    <footer style={styles.footer}>
+    <footer style={styles.footer} className="footer-mobile-center">
       <div className="container" style={styles.grid}>
         <div>
           <img src="/LOGO.jpeg" alt="Balobali" style={styles.brandLogo} />
@@ -14,7 +14,7 @@ const Footer = () => {
         </div>
         
         <div>
-          <ul style={styles.list}>
+          <ul style={{ ...styles.list, padding: 0 }}>
             <li>
               <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" style={{color: 'inherit', textDecoration: 'none'}}>
                 {t('footer.contact')}
@@ -31,7 +31,7 @@ const Footer = () => {
         <div>
           <h4 style={styles.title}>{t('footer.newsletter')}</h4>
           <p style={styles.text}>{t('footer.newsletterDesc')}</p>
-          <div style={styles.inputGroup}>
+          <div style={styles.inputGroup} className="input-group-mobile">
             <input type="email" placeholder="Email Address" style={styles.input} />
             <button className="btn-primary" style={styles.btn}>{t('footer.join')}</button>
           </div>

@@ -152,6 +152,61 @@ h3 { font-size: 1.75rem; }
   .show-on-mobile {
     display: flex !important;
   }
+
+  /* Grid Stack for mobile */
+  .grid-mobile-1 {
+    grid-template-columns: 1fr !important;
+    grid-auto-rows: auto !important;
+    gap: 1.5rem !important;
+  }
+  
+  .grid-mobile-1 > div {
+    grid-column: span 1 !important;
+    grid-row: auto !important;
+    min-height: 300px;
+  }
+
+  /* Footer Centering */
+  .footer-mobile-center {
+    text-align: center !important;
+  }
+
+  .footer-mobile-center .container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 2.5rem !important;
+  }
+
+  .footer-mobile-center ul {
+    align-items: center !important;
+  }
+
+  .footer-mobile-center .input-group-mobile {
+    flex-direction: column !important;
+    width: 100%;
+  }
+
+  .footer-mobile-center .input-group-mobile input {
+    width: 100% !important;
+    text-align: center;
+  }
+
+  /* Home Section Header Centering */
+  .section-header-mobile {
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+    text-align: center !important;
+  }
+
+  .section-header-mobile .header-title-group {
+    flex-direction: column !important;
+    gap: 1rem !important;
+  }
+
+  .section-header-mobile .section-line {
+    display: none !important;
+  }
 }
 
 /* Mobile Menu Drawer */

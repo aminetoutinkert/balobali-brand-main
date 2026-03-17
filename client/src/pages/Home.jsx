@@ -80,12 +80,12 @@ const Home = () => {
 
       {/* Featured Categories (Editorial Layout) */}
       <section className="container" style={styles.categorySection}>
-        <div style={styles.sectionHeader}>
-          <div style={styles.headerTitleGroup}>
+        <div style={styles.sectionHeader} className="section-header-mobile">
+          <div style={styles.headerTitleGroup} className="header-title-group">
             <Link to="/shop" style={{ textDecoration: 'none', color: 'inherit' }}>
               <h2 style={styles.sectionTitle}>{t('home.categories.title')}</h2>
             </Link>
-            <div style={styles.sectionLine}></div>
+            <div style={styles.sectionLine} className="section-line"></div>
           </div>
           <Link to="/shop" style={styles.linkWithIcon}>
             {t('home.categories.viewAll')} <ArrowRight size={16} />
